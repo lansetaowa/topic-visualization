@@ -1,4 +1,4 @@
-## Visualizing posts content by brand using Correspondence Analysis
+## Visualizing social media content by brand using Correspondence Analysis
 
 ### Background
 When we have thousands of posts full of text and symbols from social media, it is difficult to tell what they are talking about at a glance, not to say detailing them with a further dimension, such as by brands mentioned, or quarters of the posts. 
