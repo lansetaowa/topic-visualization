@@ -15,4 +15,4 @@ In the scatter plot, each brand (shown in red dots) are surrounded by different 
 
 Words in the middle of the chart are commonly mentioned and shared among all brands, while words on the edge are unique to the brand at its closest.
 
-![alt text](image.png)
+![alt text](image-1.png)

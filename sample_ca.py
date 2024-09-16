@@ -16,6 +16,8 @@ import pandas as pd
 from topic_visualization.preprocess import preprocess
 from topic_visualization.count_word import count_keywords
 from topic_visualization.correspondence_method import Correspondence_Viz
+from topic_visualization.keywords_translation import *
+
 import sys
 
 data_dir = 'sample\sample_input'
@@ -33,7 +35,7 @@ df.columns = [dim, 'content']
 # read in selected key words, indicated by "flag=1"
 # selected words are output from the word count step
 selected = pd.read_excel(output_dir + '\\'+selected_name)
-selected_words = selected[selected['flag']==1]['word'].to_list()
+selected_words = selected[(selected['flag']==1)&(selected['term_freq']>=100)&(selected['doc_freq']>=100)]['word'].to_list()
 
 # preprocess content column
 df['content_processed'] = df['content'].apply(preprocess)
@@ -48,6 +50,9 @@ counts = pd.concat([counts, df[dim]],
 
 # pvt is the table ready for CA analysis
 pvt = counts.groupby(dim).sum()
+
+# translate Chinese columns into English for better understanding
+pvt.rename(columns = keywords_trans, inplace=True)
 
 # initialize the class for correspondence analysis
 ca_viz = Correspondence_Viz(value_var = 'keywords',

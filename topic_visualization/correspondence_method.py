@@ -82,7 +82,7 @@ class Correspondence_Viz():
 
         # Add labels to each point
         for i, txt in enumerate(l):
-            plt.annotate(txt, (x[i], y[i]), fontsize = 14)
+            plt.annotate(txt, (x[i], y[i]), fontsize = 12)
 
         # ax.set_xlim(-0.5, 0.8)
         # ax.set_ylim(-0.5, 0.8)
