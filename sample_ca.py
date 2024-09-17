@@ -34,6 +34,7 @@ df.columns = [dim, 'content']
 
 # read in selected key words, indicated by "flag=1"
 # selected words are output from the word count step
+# only meaningful words with sufficent frequency will be selected
 selected = pd.read_excel(output_dir + '\\'+selected_name)
 selected_words = selected[(selected['flag']==1)&(selected['term_freq']>=100)&(selected['doc_freq']>=100)]['word'].to_list()
 
